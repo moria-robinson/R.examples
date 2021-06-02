@@ -1,1 +1,1 @@
-# R.examples : Repository of data and code to support R-related questions (posted to Stackoverflow, Google groups, etc.)
+Issue orienting images radially around a circular phylogeny
