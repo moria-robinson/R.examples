@@ -20,13 +20,13 @@ trait4 <- c(rep("green.png", 6), rep(NA, 5))
 trait5 <- c(rep("blue.png", 6), rep(NA, 5))
 trait6 <- c(rep("purple.png", 6), rep(NA, 5))
 
-# Set directory to external folder of files
+# Download / set path to image files
 # 1) go to www.github.com/moria-robinson / R.examples
-# 2) download "symbols" folder (should contain 6 .png image files, each a colored square)
-# 3) set local path to folder; this navigates to 'downloads' folder
-setwd("~/Downloads/symbols")
+# 2) download all six .png image files; each is a colored square
+# 3) set local path to images; this navigates to 'downloads' folder
+setwd("~/Downloads")
 
-# Create tree. Issue: symbols do not rotate. Goal is that each set of symbols is rotated radially (e.g. at each tip, symbols should look like they do for the species on the horizontal axis - Hypsoropha and Abablemma)
+# Create circular phylogeny. Issue: symbols do not rotate. Goal is that each set of symbols is rotated radially (e.g. at each tip, symbols should look like they do for the species on the horizontal axis - Hypsoropha and Abablemma)
 # - I show the different angle commands I tried in different rows
 tree.out <- ggtree(tree, layout="circular") + 
   geom_tiplab(size=2, offset=0.25, color="black", align=TRUE) +
@@ -39,7 +39,7 @@ tree.out <- ggtree(tree, layout="circular") +
   ggplot2::xlim(-35, 35)
 tree.out # preview as a PDF 8 x 8 
 
-# This will save a PDF of the tree in the downloads folder
+# This will save a PDF of the tree in the downloads folder; can also view in repo
 pdf("~/Downloads/tree.out.pdf", width=8, height=8)
 tree.out
 dev.off()
